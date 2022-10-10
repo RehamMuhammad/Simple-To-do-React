@@ -4,9 +4,10 @@
     justify-content: center;
     margin-top: 25px;
 }
+
 main {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin: 25px;
     background-image: linear-gradient(to right bottom, rgb(236, 44, 236), rgb(248, 248, 64));

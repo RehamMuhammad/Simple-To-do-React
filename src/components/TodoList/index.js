@@ -6,7 +6,7 @@ function TodoList({ toDoList, handleToggle, handleFilter }) {
         <>
             {toDoList.map(todo => {
                 return (
-                    <Todo key={todo.id+todo.task} todo={todo} toggleTask={handleToggle} deleteTask={handleFilter} />
+                    <Todo key={todo.id + todo.task} todo={todo} toggleTask={handleToggle} deleteTask={handleFilter} />
                 )
             })}
         </>

@@ -8,13 +8,18 @@ function AddTodo({ addTask }) {
 
     const handleChange = (e) => {
         setNewTask(e.target.value)
+        console.log(newTask)
+
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors(newTask.length === 0 ? "You Should Enter a Task Name" : "");
-        if(!errors){
-        addTask(newTask)
+        console.log(errors)
+        setErrors(!newTask ? "You Should Enter a Task Name" : "");
+        console.log(errors)
+
+        if (!errors) {
+            addTask(newTask)
         }
     }
 
