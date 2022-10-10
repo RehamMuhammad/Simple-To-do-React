@@ -8,3 +8,28 @@
     padding: 30px;
     color: white;
 }
+
+h5{
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+.done{
+    color: green;
+}
+
+.to-do{
+    color: black;
+}
+
+.btn-delete{
+    padding: 2px 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

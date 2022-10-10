@@ -23,7 +23,6 @@ const handleFilter = (id) => {
 
 //Toggle Task
 const handleToggle = (id) => {
-
   let completed = tasks.map(task => {
     return task.id === Number(id) ? { ...task, completed: !task.completed } : { ...task};
   });
