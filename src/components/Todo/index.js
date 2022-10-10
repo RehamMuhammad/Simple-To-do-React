@@ -1,11 +1,12 @@
 import React from 'react'
 import "./todo.css"
 
-function Todo() {
+function Todo({todo, deleteTask, toggleTask }) {
   return (
     <div className='container'>
-        <h5 className='task'>Task</h5>
-        <p className='status'>To-Do</p>
+        <h5 className='task' onClick={toggleTask}>{todo.task}</h5>
+        <p className='status'>{todo.status}</p>
+        <button onClick={deleteTask}>Delete</button>
     </div>
   )
 }

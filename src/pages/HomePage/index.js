@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddTodo, Todo } from '../../components'
+import { AddTodo, TodoList } from '../../components'
 import "./home.css"
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
       </div>
 
       <main>
-        <Todo />
+        <TodoList toDoList={[{id:1, task:"Roro", status:"Done"}]} />
       </main>
       </>
 
