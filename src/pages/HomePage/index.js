@@ -27,6 +27,7 @@ const handleToggle = (id) => {
     return task.id === Number(id) ? { ...task, completed: !task.completed } : { ...task};
   });
   setTasks(completed);
+
 }
 
   return (

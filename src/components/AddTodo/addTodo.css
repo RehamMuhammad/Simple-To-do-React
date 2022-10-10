@@ -10,3 +10,8 @@
     cursor: pointer;
     margin-left: 10px;
 }
+
+.text-danger{
+    color: red;
+    margin-left: 10px;
+}
