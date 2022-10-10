@@ -1,9 +1,10 @@
 import React from 'react'
+import { Todo } from '../../components'
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <Todo />
+    )
 }
 
 export default Home;
