@@ -10,7 +10,7 @@ function Home() {
   const addTask = (task) => {
     console.log(task)
     let newTasks = [...tasks];
-    newTasks = [...newTasks, {id: newTasks.length+1, task, status:"To-do"}]
+    newTasks = [...newTasks, {id: newTasks.length+1, task, completed:false}]
     setTasks(newTasks);
     console.log(tasks)
   }
@@ -21,6 +21,15 @@ const handleFilter = (id) => {
   setTasks(filteredTasks)
 }
 
+//Toggle Task
+const handleToggle = (id) => {
+
+  let completed = tasks.map(task => {
+    return task.id === Number(id) ? { ...task, completed: !task.completed } : { ...task};
+  });
+  setTasks(completed);
+}
+
   return (
     <>
     <div className='add-task'>
@@ -28,7 +37,7 @@ const handleFilter = (id) => {
       </div>
 
       <main>
-        <TodoList toDoList={tasks} handleFilter={handleFilter} />
+        <TodoList toDoList={tasks} handleFilter={handleFilter} handleToggle={handleToggle}/>
       </main>
       </>
 
