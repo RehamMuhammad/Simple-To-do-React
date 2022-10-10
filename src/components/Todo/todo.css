@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 7px;
+    border: 1px solid purple;
+    padding: 30px;
+    color: white;
+}
