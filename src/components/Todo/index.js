@@ -6,7 +6,7 @@ function Todo({todo, deleteTask, toggleTask }) {
     <div className='container'>
         <h5 className='task' onClick={toggleTask}>{todo.task}</h5>
         <p className='status'>{todo.status}</p>
-        <button onClick={deleteTask}>Delete</button>
+        <button onClick={() => deleteTask(todo.id)}>Delete</button>
     </div>
   )
 }

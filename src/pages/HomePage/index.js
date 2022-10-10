@@ -6,15 +6,21 @@ function Home() {
 
   const [tasks, setTasks] = useState([]);
 
-
+//Add New Task
   const addTask = (task) => {
     console.log(task)
     let newTasks = [...tasks];
     newTasks = [...newTasks, {id: newTasks.length+1, task, status:"To-do"}]
     setTasks(newTasks);
     console.log(tasks)
-
   }
+
+//Delete Task
+const handleFilter = (id) => {
+  let filteredTasks = tasks.filter((task) => task.id !== id);
+  setTasks(filteredTasks)
+}
+
   return (
     <>
     <div className='add-task'>
@@ -22,7 +28,7 @@ function Home() {
       </div>
 
       <main>
-        <TodoList toDoList={tasks} />
+        <TodoList toDoList={tasks} handleFilter={handleFilter} />
       </main>
       </>
 
