@@ -1,4 +1,4 @@
-import { HomePage } from "./pages";
+import { EditPage, HomePage } from "./pages";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Route
         path="/edit/:id"
         element={
-          <HomePage />}
+          <EditPage />}
       />
     </Routes>
   );

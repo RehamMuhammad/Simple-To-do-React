@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AddTodo, TodoList } from '../../components'
 import "./home.css"
 
 function Home() {
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+
+ 
   //Add New Task
   const addTask = (task) => {
     console.log(task)
@@ -27,7 +33,6 @@ function Home() {
       return task.id === Number(id) ? { ...task, completed: !task.completed } : { ...task };
     });
     setTasks(completed);
-
   }
 
   return (
