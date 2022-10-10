@@ -1,48 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux';
 import { AddTodo, TodoList } from '../../components'
 import "./home.css"
 
 function Home() {
+const tasks = useSelector(state => state.tasks)
 
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
-
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
-
-
- 
-  //Add New Task
-  const addTask = (task) => {
-    console.log(task)
-    let newTasks = [...tasks];
-    newTasks = [...newTasks, { id: newTasks.length + 1, task, completed: false }]
-    setTasks(newTasks);
-    console.log(tasks)
-  }
-
-  //Delete Task
-  const handleFilter = (id) => {
-    let filteredTasks = tasks.filter((task) => task.id !== id);
-    setTasks(filteredTasks)
-  }
-
-  //Toggle Task
-  const handleToggle = (id) => {
-    let completed = tasks.map(task => {
-      return task.id === Number(id) ? { ...task, completed: !task.completed } : { ...task };
-    });
-    setTasks(completed);
-  }
+  // //Toggle Task
+  // const handleToggle = (id) => {
+  //   let completed = taskList.map(task => {
+  //     return task.id === Number(id) ? { ...task, completed: !task.completed } : { ...task };
+  //   });
+  //   setTaskList(completed);
+  // }
 
   return (
     <>
       <div className='add-task'>
-        <AddTodo addTask={addTask} />
+        <AddTodo />
       </div>
 
       <main>
-        <TodoList toDoList={tasks} handleFilter={handleFilter} handleToggle={handleToggle} />
+        <TodoList toDoList={tasks} />
       </main>
     </>
 

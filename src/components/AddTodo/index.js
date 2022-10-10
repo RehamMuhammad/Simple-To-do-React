@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { createTask } from '../../store/actions';
 import "./addTodo.css"
 
-function AddTodo({ addTask }) {
+function AddTodo() {
+    const dispatch = useDispatch()
 
     const [newTask, setNewTask] = useState("");
     const [errors, setErrors] = useState(" ")
@@ -9,7 +12,6 @@ function AddTodo({ addTask }) {
     const handleChange = (e) => {
         setNewTask(e.target.value)
         console.log(newTask)
-
     }
 
     const handleSubmit = (e) => {
@@ -17,9 +19,8 @@ function AddTodo({ addTask }) {
         console.log(errors)
         setErrors(!newTask ? "You Should Enter a Task Name" : "");
         console.log(errors)
-
         if (!errors) {
-            addTask(newTask)
+            dispatch(createTask(newTask))
         }
     }
 
