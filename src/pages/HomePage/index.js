@@ -1,12 +1,22 @@
 import React from 'react'
-import { Todo } from '../../components'
+import { AddTodo, Todo } from '../../components'
 import "./home.css"
 
 function Home() {
+  const addTask = (task) => {
+    console.log(task)
+  }
   return (
-    <main>
-      <Todo />
-    </main>
+    <>
+    <div className='add-task'>
+      <AddTodo addTask={addTask}/>
+      </div>
+
+      <main>
+        <Todo />
+      </main>
+      </>
+
   )
 }
 
